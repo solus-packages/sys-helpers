@@ -1,0 +1,19 @@
+name       : sys-helpers
+version    : 0.0.1
+release    : 1
+source     :
+    - https://github.com/JoshStrobl/sys-helpers/releases/download/0.0.1/sys-helpers-0.0.1-workspace.tar.xz : 37cfc3ac990179143e8d668eef7ce7802141d9852c99411accf107208c47425a
+license    : Apache-2.0
+component  : system.utils
+summary    : System helper programs.
+description: |
+    System helper programs.
+builddeps  :
+    - golang
+build      : |
+    export GOPATH="$workdir"
+    cd src/github.com/JoshStrobl/sys-helpers/
+    %make
+install    : |
+    cd src/github.com/JoshStrobl/sys-helpers/
+    %make_install
